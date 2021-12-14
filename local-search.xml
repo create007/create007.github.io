@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>每日分享</title>
+    <link href="/2021/12/14/share-daily/"/>
+    <url>/2021/12/14/share-daily/</url>
+    
+    <content type="html"><![CDATA[<h2 id="时间太短，一时不知道写啥"><a href="#时间太短，一时不知道写啥" class="headerlink" title="时间太短，一时不知道写啥"></a>时间太短，一时不知道写啥</h2><p>这段时间(2021年10月-12月中)，主要是整理了下linux c和QT，后续每日会出一篇文章用于发布！</p><p><img src="/img/qinLing1.jpg" alt="hexo目录下文件"></p><p><img src="/img/qinLing2.jpg" alt="hexo目录下文件"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>daily shared</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用github和hexo搭建个人博客</title>
     <link href="/2021/11/15/11-15/"/>
     <url>/2021/11/15/11-15/</url>
