@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>test</title>
+    <link href="/2025/05/05/test/"/>
+    <url>/2025/05/05/test/</url>
+    
+    <content type="html"><![CDATA[<h1 id="关于即死又活薛定谔的描述"><a href="#关于即死又活薛定谔的描述" class="headerlink" title="关于即死又活薛定谔的描述"></a>关于即死又活薛定谔的描述</h1><h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p>薛定谔的猫是一个著名的思想实验，由奥地利物理学家埃尔温·薛定谔在1935年提出，旨在探讨量子力学中的哥本哈根解释所引发的一些奇特后果。这个实验描述了一只假想的猫，在一个封闭的盒子里，与一瓶毒药和一个放射性原子源放在一起。根据量子力学的原理，如果原子核发生衰变，则会触发释放毒药的机制，导致猫死亡；如果原子核没有衰变，则猫存活。</p><p>按照量子力学中的叠加态概念，在盒子未被打开、系统未被观测之前，这个系统可以同时处于两种状态的叠加：即原子核既衰变了又没有衰变，相应的，猫既是死的又是活的。这种状态被称为量子叠加态。</p><p>这个思想实验揭示了微观粒子的行为如何在宏观世界中产生看似荒谬的结果，并挑战了我们对现实本质的理解。它强调了在量子力学中测量的重要性——只有当我们观察或测量时，系统的波函数才会“坍缩”到一个确定的状态（在这种情况下，确定猫是死还是活）。</p><p>通过薛定谔的猫这一比喻，薛定谔希望指出量子理论在应用到日常尺度上的物体时出现的问题，以及需要更加完善的解释来理解量子现象如何过渡到经典物理学的现象。这促进了对于量子力学基础问题的更多讨论和研究。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>revive</title>
+    <link href="/2025/05/02/revive/"/>
+    <url>/2025/05/02/revive/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2025/05/02/hello-world/"/>
+    <url>/2025/05/02/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
