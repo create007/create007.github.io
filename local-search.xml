@@ -4,11 +4,76 @@
   
   
   <entry>
+    <title>rockchip_soc_debug</title>
+    <link href="/2025/05/07/rockchip-soc-debug/"/>
+    <url>/2025/05/07/rockchip-soc-debug/</url>
+    
+    <content type="html"><![CDATA[<h1 id="介绍-rk-平台常用调式手段"><a href="#介绍-rk-平台常用调式手段" class="headerlink" title="介绍 rk 平台常用调式手段"></a>介绍 rk 平台常用调式手段</h1><h2 id="venc"><a href="#venc" class="headerlink" title="venc"></a>venc</h2><h3 id="查看编码器频率"><a href="#查看编码器频率" class="headerlink" title="查看编码器频率"></a>查看编码器频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cat</span>  /sys/kernel/debug/clk/clk_rkvenc0_core/clk_rate<br><span class="hljs-built_in">cat</span>  /sys/kernel/debug/clk/clk_rkvenc1_core/clk_rate<br></code></pre></td></tr></table></figure><h2 id="isp"><a href="#isp" class="headerlink" title="isp"></a>isp</h2><h3 id="直通模式和半直通模式"><a href="#直通模式和半直通模式" class="headerlink" title="直通模式和半直通模式"></a>直通模式和半直通模式</h3><p><img src="/img/rockchip/isp_readback.png" alt="官方解释"></p><p>aiq 配置回读模式</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">export</span> normal_no_read_back=0<br></code></pre></td></tr></table></figure><p>media 拓扑断开isp和cif链接</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">media-ctl -d /dev/media1 -l  &amp;apos;<span class="hljs-string">&quot;rkcif-mipi-lvds&quot;</span>:0-&gt;<span class="hljs-string">&quot;rkisp-isp-subdev&quot;</span>:0[0]&amp;apos;  //将rkcif-mipi-lvds4和lvds4断开<br>media-ctl -d /dev/media1 -l  &amp;apos;<span class="hljs-string">&quot;rkisp_rawrd2_s&quot;</span>:0-&gt;<span class="hljs-string">&quot;rkisp-isp-subdev&quot;</span>:0[1]&amp;apos;  //将media3和rawrd2连接<br></code></pre></td></tr></table></figure><h2 id="ddr"><a href="#ddr" class="headerlink" title="ddr"></a>ddr</h2><h3 id="设置-ddr-频率"><a href="#设置-ddr-频率" class="headerlink" title="设置 ddr 频率"></a>设置 ddr 频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cat</span> /sys/class/devfreq/dmc/available_frequencies<br><span class="hljs-built_in">echo</span> userspace &gt; /sys/class/devfreq/dmc/governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$freq</span> &gt; /sys/class/devfreq/dmc/userspace/set_freq<br></code></pre></td></tr></table></figure><h2 id="cpu"><a href="#cpu" class="headerlink" title="cpu"></a>cpu</h2><h2 id="配置-cpu-频率"><a href="#配置-cpu-频率" class="headerlink" title="配置 cpu 频率"></a>配置 cpu 频率</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> userspace &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>  &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>linux_debug</title>
+    <link href="/2025/05/07/linux-debug/"/>
+    <url>/2025/05/07/linux-debug/</url>
+    
+    <content type="html"><![CDATA[<h1 id="linux-文件系统基本使用"><a href="#linux-文件系统基本使用" class="headerlink" title="linux 文件系统基本使用"></a>linux 文件系统基本使用</h1><h2 id="proc-iomem"><a href="#proc-iomem" class="headerlink" title="&#x2F;proc&#x2F;iomem"></a>&#x2F;proc&#x2F;iomem</h2><p>&#x2F;proc&#x2F;iomem 是一个 虚拟文件，用于记录系统中 物理内存和 I&#x2F;O 内存区域的映射信息。它展示了内核管理的所有物理地址空间的分配情况，包括 RAM、ROM、设备寄存器（MMIO）、PCI 设备内存等。通过这个信息也可以看设备有没有注册。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>code_debug</title>
+    <link href="/2025/05/07/code-debug/"/>
+    <url>/2025/05/07/code-debug/</url>
+    
+    <content type="html"><![CDATA[<h1 id="代码常用调式方式"><a href="#代码常用调式方式" class="headerlink" title="代码常用调式方式"></a>代码常用调式方式</h1><h2 id="打印调用堆栈"><a href="#打印调用堆栈" class="headerlink" title="打印调用堆栈"></a>打印调用堆栈</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;execinfo.h&gt;</span>  <span class="hljs-comment">// for backtrace</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span><br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAX_STACK_FRAMES 128</span><br><br><span class="hljs-type">void</span> <span class="hljs-title function_">print_stack_trace</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">void</span> *stack_frames[MAX_STACK_FRAMES];<br>    <span class="hljs-type">int</span> num_frames = backtrace(stack_frames, MAX_STACK_FRAMES);<br>    <span class="hljs-type">char</span> **symbols = backtrace_symbols(stack_frames, num_frames);<br><br>    <span class="hljs-keyword">if</span> (symbols == <span class="hljs-literal">NULL</span>) &#123;<br>        perror(<span class="hljs-string">&quot;backtrace_symbols&quot;</span>);<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Call stack:\n&quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; num_frames; i++) &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, symbols[i]);<br>    &#125;<br><br>    <span class="hljs-built_in">free</span>(symbols);<br>&#125;<br><br><span class="hljs-type">void</span> <span class="hljs-title function_">func_c</span><span class="hljs-params">()</span> &#123;<br>    print_stack_trace();<br>&#125;<br><br><span class="hljs-type">void</span> <span class="hljs-title function_">func_b</span><span class="hljs-params">()</span> &#123;<br>    func_c();<br>&#125;<br><br><span class="hljs-type">void</span> <span class="hljs-title function_">func_a</span><span class="hljs-params">()</span> &#123;<br>    func_b();<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    func_a();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br>build:<br>gcc -rdynamic -o stack_trace stack_trace.c  # `-rdynamic` 确保函数名可解析<br>./stack_trace<br><br>run:<br>Call <span class="hljs-built_in">stack</span>:<br>./stack_trace(print_stack_trace+<span class="hljs-number">0x1f</span>) [<span class="hljs-number">0x55a3b2d8b1af</span>]<br>./stack_trace(func_c+<span class="hljs-number">0xe</span>) [<span class="hljs-number">0x55a3b2d8b1ee</span>]<br>./stack_trace(func_b+<span class="hljs-number">0xe</span>) [<span class="hljs-number">0x55a3b2d8b201</span>]<br>./stack_trace(func_a+<span class="hljs-number">0xe</span>) [<span class="hljs-number">0x55a3b2d8b214</span>]<br>./stack_trace(main+<span class="hljs-number">0xe</span>) [<span class="hljs-number">0x55a3b2d8b227</span>]<br>/lib/x86_64-linux-gnu/libc.so.<span class="hljs-number">6</span>(__libc_start_main+<span class="hljs-number">0xf3</span>) [<span class="hljs-number">0x7f8c3a3a0083</span>]<br>./stack_trace(_start+<span class="hljs-number">0x2e</span>) [<span class="hljs-number">0x55a3b2d8b0ae</span>]<br></code></pre></td></tr></table></figure><h2 id="gdb"><a href="#gdb" class="headerlink" title="gdb"></a>gdb</h2><h2 id="内核打印堆栈"><a href="#内核打印堆栈" class="headerlink" title="内核打印堆栈"></a>内核打印堆栈</h2><p>dump_stack()</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>mem_leak</title>
+    <link href="/2025/05/07/mem-leak/"/>
+    <url>/2025/05/07/mem-leak/</url>
+    
+    <content type="html"><![CDATA[<h1 id="排查内存泄露方式"><a href="#排查内存泄露方式" class="headerlink" title="排查内存泄露方式"></a>排查内存泄露方式</h1><h2 id="确定泄露情况"><a href="#确定泄露情况" class="headerlink" title="确定泄露情况"></a>确定泄露情况</h2><p>通过 cat &#x2F;proc&#x2F;meminfo 查看 avalible mem 是否一直在减少</p><h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><h3 id="代码做静态检查"><a href="#代码做静态检查" class="headerlink" title="代码做静态检查"></a>代码做静态检查</h3><p>如使用cppcheck</p><h3 id="本地运行实时检查"><a href="#本地运行实时检查" class="headerlink" title="本地运行实时检查"></a>本地运行实时检查</h3><p>可根据情况选择 vailgrand，asan，tcmalloc</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>analysis_crash</title>
+    <link href="/2025/05/07/analysis-crash/"/>
+    <url>/2025/05/07/analysis-crash/</url>
+    
+    <content type="html"><![CDATA[<h1 id="常见崩溃问题分析"><a href="#常见崩溃问题分析" class="headerlink" title="常见崩溃问题分析"></a>常见崩溃问题分析</h1><h2 id="崩溃在内核"><a href="#崩溃在内核" class="headerlink" title="崩溃在内核"></a>崩溃在内核</h2><p>根据堆栈分析具体行号</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">arm-linux-gnueabihf-addr2line -e libx.so <span class="hljs-number">0x704da7</span><br></code></pre></td></tr></table></figure><p>使用 gdb 加载符号表</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">gdb <span class="hljs-title function_">vmlinux</span><br><span class="hljs-params">(gdb)</span> <span class="hljs-built_in">list</span> *<span class="hljs-params">(&lt;function_name&gt;+<span class="hljs-number">0</span>x&lt;offset&gt;)</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>老薛的猫</title>
     <link href="/2025/05/05/test/"/>
     <url>/2025/05/05/test/</url>
     
-    <content type="html"><![CDATA[<h1 id="关于即死又活薛定谔的描述"><a href="#关于即死又活薛定谔的描述" class="headerlink" title="关于即死又活薛定谔的描述"></a>关于即死又活薛定谔的描述</h1><h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p>薛定谔的猫是一个著名的思想实验，由奥地利物理学家埃尔温·薛定谔在1935年提出，旨在探讨量子力学中的哥本哈根解释所引发的一些奇特后果。这个实验描述了一只假想的猫，在一个封闭的盒子里，与一瓶毒药和一个放射性原子源放在一起。根据量子力学的原理，如果原子核发生衰变，则会触发释放毒药的机制，导致猫死亡；如果原子核没有衰变，则猫存活。</p><p>按照量子力学中的叠加态概念，在盒子未被打开、系统未被观测之前，这个系统可以同时处于两种状态的叠加：即原子核既衰变了又没有衰变，相应的，猫既是死的又是活的。这种状态被称为量子叠加态。</p><p>这个思想实验揭示了微观粒子的行为如何在宏观世界中产生看似荒谬的结果，并挑战了我们对现实本质的理解。它强调了在量子力学中测量的重要性——只有当我们观察或测量时，系统的波函数才会“坍缩”到一个确定的状态（在这种情况下，确定猫是死还是活）。</p><p>通过薛定谔的猫这一比喻，薛定谔希望指出量子理论在应用到日常尺度上的物体时出现的问题，以及需要更加完善的解释来理解量子现象如何过渡到经典物理学的现象。这促进了对于量子力学基础问题的更多讨论和研究。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="关于即死又活薛定谔的描述"><a href="#关于即死又活薛定谔的描述" class="headerlink" title="关于即死又活薛定谔的描述"></a>关于即死又活薛定谔的描述</h1><h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p>薛定谔的猫是一个著名的思想实验，由奥地利物理学家埃尔温·薛定谔在1935年提出，旨在探讨量子力学中的哥本哈根解释所引发的一些奇特后果。这个实验描述了一只假想的猫，在一个封闭的盒子里，与一瓶毒药和一个放射性原子源放在一起。根据量子力学的原理，如果原子核发生衰变，则会触发释放毒药的机制，导致猫死亡；如果原子核没有衰变，则猫存活。</p><p>按照量子力学中的叠加态概念，在盒子未被打开、系统未被观测之前，这个系统可以同时处于两种状态的叠加：即原子核既衰变了又没有衰变，相应的，猫既是死的又是活的。这种状态被称为量子叠加态。</p><p>这个思想实验揭示了微观粒子的行为如何在宏观世界中产生看似荒谬的结果，并挑战了我们对现实本质的理解。它强调了在量子力学中测量的重要性——只有当我们观察或测量时，系统的波函数才会“坍缩”到一个确定的状态（在这种情况下，确定猫是死还是活）。</p><p>通过薛定谔的猫这一比喻，薛定谔希望指出量子理论在应用到日常尺度上的物体时出现的问题，以及需要更加完善的解释来理解量子现象如何过渡到经典物理学的现象。这促进了对于量子力学基础问题的更多讨论和研究。</p><ul><li>为喵界发声，在喵界的角度薛定谔也是即死又活的！！！</li></ul>]]></content>
     
     
     

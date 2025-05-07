@@ -19,25 +19,25 @@
   <meta name="author" content="不会碎觉的猫">
   <meta name="keywords" content="">
   
-    <meta name="description" content="复活节">
+    <meta name="description" content="介绍 rk 平台常用调式手段venc查看编码器频率12cat  &#x2F;sys&#x2F;kernel&#x2F;debug&#x2F;clk&#x2F;clk_rkvenc0_core&#x2F;clk_ratecat  &#x2F;sys&#x2F;kernel&#x2F;debug&#x2F;clk&#x2F;clk_rkvenc1_core&#x2F;clk_rate  isp直通模式和半直通模式 aiq 配置回读模式 1export normal_no_read_back&#x3D;0  media 拓扑断开i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="你好">
-<meta property="og:url" content="http://example.com/2019/10/10/hello-world/index.html">
+<meta property="og:title" content="rockchip_soc_debug">
+<meta property="og:url" content="http://example.com/2025/05/07/rockchip-soc-debug/index.html">
 <meta property="og:site_name" content="不会碎觉的猫">
-<meta property="og:description" content="复活节">
+<meta property="og:description" content="介绍 rk 平台常用调式手段venc查看编码器频率12cat  &#x2F;sys&#x2F;kernel&#x2F;debug&#x2F;clk&#x2F;clk_rkvenc0_core&#x2F;clk_ratecat  &#x2F;sys&#x2F;kernel&#x2F;debug&#x2F;clk&#x2F;clk_rkvenc1_core&#x2F;clk_rate  isp直通模式和半直通模式 aiq 配置回读模式 1export normal_no_read_back&#x3D;0  media 拓扑断开i">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/bg/su15.jpg">
-<meta property="article:published_time" content="2019-10-10T02:00:00.000Z">
-<meta property="article:modified_time" content="2025-05-05T13:01:43.595Z">
+<meta property="og:image" content="http://example.com/img/rockchip/isp_readback.png">
+<meta property="article:published_time" content="2025-05-07T15:10:34.000Z">
+<meta property="article:modified_time" content="2025-05-07T15:29:23.098Z">
 <meta property="article:author" content="不会碎觉的猫">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/bg/su15.jpg">
+<meta name="twitter:image" content="http://example.com/img/rockchip/isp_readback.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>你好 - 不会碎觉的猫</title>
+  <title>rockchip_soc_debug - 不会碎觉的猫</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,13 +197,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/bg/su15.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="你好"></span>
+            <span id="subtitle" data-typed-text="rockchip_soc_debug"></span>
           
         </div>
 
@@ -214,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2019-10-10 10:00" pubdate>
-          2019年10月10日 上午
+        <time datetime="2025-05-07 23:10" pubdate>
+          2025年5月7日 晚上
         </time>
       </span>
     
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3 字
+          154 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -283,12 +283,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">你好</h1>
+            <h1 id="seo-header">rockchip_soc_debug</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年5月5日 晚上
+                    本文最后更新于 2025年5月7日 晚上
                   
                 
               </p>
@@ -296,7 +296,18 @@
             
               <div class="markdown-body">
                 
-                <h1 id="复活节"><a href="#复活节" class="headerlink" title="复活节"></a>复活节</h1>
+                <h1 id="介绍-rk-平台常用调式手段"><a href="#介绍-rk-平台常用调式手段" class="headerlink" title="介绍 rk 平台常用调式手段"></a>介绍 rk 平台常用调式手段</h1><h2 id="venc"><a href="#venc" class="headerlink" title="venc"></a>venc</h2><h3 id="查看编码器频率"><a href="#查看编码器频率" class="headerlink" title="查看编码器频率"></a>查看编码器频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cat</span>  /sys/kernel/debug/clk/clk_rkvenc0_core/clk_rate<br><span class="hljs-built_in">cat</span>  /sys/kernel/debug/clk/clk_rkvenc1_core/clk_rate<br></code></pre></td></tr></table></figure>
+
+<h2 id="isp"><a href="#isp" class="headerlink" title="isp"></a>isp</h2><h3 id="直通模式和半直通模式"><a href="#直通模式和半直通模式" class="headerlink" title="直通模式和半直通模式"></a>直通模式和半直通模式</h3><p><img src="/img/rockchip/isp_readback.png" srcset="/img/loading.gif" lazyload alt="官方解释"></p>
+<p>aiq 配置回读模式</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">export</span> normal_no_read_back=0<br></code></pre></td></tr></table></figure>
+
+<p>media 拓扑断开isp和cif链接</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">media-ctl -d /dev/media1 -l  &amp;apos;<span class="hljs-string">&quot;rkcif-mipi-lvds&quot;</span>:0-&gt;<span class="hljs-string">&quot;rkisp-isp-subdev&quot;</span>:0[0]&amp;apos;  //将rkcif-mipi-lvds4和lvds4断开<br>media-ctl -d /dev/media1 -l  &amp;apos;<span class="hljs-string">&quot;rkisp_rawrd2_s&quot;</span>:0-&gt;<span class="hljs-string">&quot;rkisp-isp-subdev&quot;</span>:0[1]&amp;apos;  //将media3和rawrd2连接<br></code></pre></td></tr></table></figure>
+
+<h2 id="ddr"><a href="#ddr" class="headerlink" title="ddr"></a>ddr</h2><h3 id="设置-ddr-频率"><a href="#设置-ddr-频率" class="headerlink" title="设置 ddr 频率"></a>设置 ddr 频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cat</span> /sys/class/devfreq/dmc/available_frequencies<br><span class="hljs-built_in">echo</span> userspace &gt; /sys/class/devfreq/dmc/governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$freq</span> &gt; /sys/class/devfreq/dmc/userspace/set_freq<br></code></pre></td></tr></table></figure>
+
+<h2 id="cpu"><a href="#cpu" class="headerlink" title="cpu"></a>cpu</h2><h2 id="配置-cpu-频率"><a href="#配置-cpu-频率" class="headerlink" title="配置 cpu 频率"></a>配置 cpu 频率</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> userspace &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>  &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -315,15 +326,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/05/05/test/" title="老薛的猫">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">老薛的猫</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2025/05/07/linux-debug/" title="linux_debug">
+                        <span class="hidden-mobile">linux_debug</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
