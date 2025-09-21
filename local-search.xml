@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>emc_engineer.md</title>
+    <link href="/2025/09/21/emc-engineer/"/>
+    <url>/2025/09/21/emc-engineer/</url>
+    
+    <content type="html"><![CDATA[<h1 id="EMC"><a href="#EMC" class="headerlink" title="EMC"></a>EMC</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>电磁兼容（Electromagnetic Compatibility，简称EMC）是指设备或系统在其电磁环境中能正常工作，并且不会对环境中的任何设备产生不能承受的电磁干扰的能力。简单来说，EMC 确保电子设备在正常工作时不会对其他设备造成干扰，同时也能够抵抗来自其他设备的电磁干扰。</p><ol><li>EMI（Electromagnetic Interference） - 电磁干扰，指设备在正常工作时可能对其他设备产生的干扰。这包括传导干扰和辐射干扰。</li><li>EMS（Electromagnetic Susceptibility） - 电磁敏感度，指设备对外界电磁干扰的抵抗能力。</li></ol><h2 id="测试内容"><a href="#测试内容" class="headerlink" title="测试内容"></a>测试内容</h2><ul><li>传导干扰测试（Conducted Emission）</li><li>辐射干扰测试（Radiated Emission）</li><li>静电放电抗扰度测试（ESD）</li><li>快速脉冲群抗扰度测试（EFT）</li><li>浪涌抗扰度测试（Surge）</li><li>电压跌落抗扰度测试（Dips）</li></ul><h2 id="工程师职责"><a href="#工程师职责" class="headerlink" title="工程师职责"></a>工程师职责</h2><ol><li><p>EMC 设计与评估<br>在产品开发初期参与 EMC 设计，评估潜在电磁干扰风险，指导硬件、PCB Layout 和结构工程师进行 EMC 优化设计。</p></li><li><p>EMC 测试与整改<br>制定测试计划，执行 EMI（电磁干扰）和 EMS（电磁抗扰度）测试，分析测试数据，定位问题并提出整改方案。</p></li><li><p>认证与标准解读<br>熟悉并应用国际&#x2F;国家 EMC 标准（如 CISPR、ISO、IEC、GB、FCC 等），负责产品认证过程中的 EMC 问题解决。</p></li><li><p>技术文档与规范制定<br>编写 EMC 测试报告、设计规范、整改案例库，推动企业内部的 EMC 设计流程标准化。</p></li><li><p>跨部门协作与培训<br>为研发团队提供 EMC 技术支持，参与设计评审，组织内部培训，提高团队 EMC 意识与能力</p></li></ol><h2 id="工程师掌握技能"><a href="#工程师掌握技能" class="headerlink" title="工程师掌握技能"></a>工程师掌握技能</h2><ul><li>测试设备：频谱仪、示波器、EMI 接收机、静电放电发生器、浪涌测试仪等；</li><li>设计工具：PADS、Altium Designer、Cadence 等 PCB 设计工具；</li><li>仿真工具：ANSYS HFSS、CST、SIwave 等 EMC 仿真平台；</li><li>标准体系：CISPR 25、ISO 7637、ISO 11452、IEC 61000、GB&#x2F;T 18387 等。</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>blog_generate</title>
     <link href="/2025/09/21/blog-generate/"/>
     <url>/2025/09/21/blog-generate/</url>
