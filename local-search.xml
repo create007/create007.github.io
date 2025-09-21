@@ -4,11 +4,43 @@
   
   
   <entry>
+    <title>blog_generate</title>
+    <link href="/2025/09/21/blog-generate/"/>
+    <url>/2025/09/21/blog-generate/</url>
+    
+    <content type="html"><![CDATA[<h1 id="blog-generate"><a href="#blog-generate" class="headerlink" title="blog_generate"></a>blog_generate</h1><p>hexo generate step</p><ol><li>hexo init</li><li>hexo new “blog_name”</li><li>hexo generate</li><li>hexo server</li></ol><h1 id="blog-deploy"><a href="#blog-deploy" class="headerlink" title="blog deploy"></a>blog deploy</h1><ol><li>hexo clean</li><li>hexo generate</li><li>hexo deploy</li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>operate_system</title>
+    <link href="/2025/05/18/operate-system/"/>
+    <url>/2025/05/18/operate-system/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>操作系统</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>rockchip_soc_debug</title>
     <link href="/2025/05/07/rockchip-soc-debug/"/>
     <url>/2025/05/07/rockchip-soc-debug/</url>
     
-    <content type="html"><![CDATA[<h1 id="介绍-rk-平台常用调式手段"><a href="#介绍-rk-平台常用调式手段" class="headerlink" title="介绍 rk 平台常用调式手段"></a>介绍 rk 平台常用调式手段</h1><h2 id="venc"><a href="#venc" class="headerlink" title="venc"></a>venc</h2><h3 id="查看编码器频率"><a href="#查看编码器频率" class="headerlink" title="查看编码器频率"></a>查看编码器频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cat</span>  /sys/kernel/debug/clk/clk_rkvenc0_core/clk_rate<br><span class="hljs-built_in">cat</span>  /sys/kernel/debug/clk/clk_rkvenc1_core/clk_rate<br></code></pre></td></tr></table></figure><h2 id="isp"><a href="#isp" class="headerlink" title="isp"></a>isp</h2><h3 id="直通模式和半直通模式"><a href="#直通模式和半直通模式" class="headerlink" title="直通模式和半直通模式"></a>直通模式和半直通模式</h3><p><img src="/img/rockchip/isp_readback.png" alt="官方解释"></p><p>aiq 配置回读模式</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">export</span> normal_no_read_back=0<br></code></pre></td></tr></table></figure><p>media 拓扑断开isp和cif链接</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">media-ctl -d /dev/media1 -l  &amp;apos;<span class="hljs-string">&quot;rkcif-mipi-lvds&quot;</span>:0-&gt;<span class="hljs-string">&quot;rkisp-isp-subdev&quot;</span>:0[0]&amp;apos;  //将rkcif-mipi-lvds4和lvds4断开<br>media-ctl -d /dev/media1 -l  &amp;apos;<span class="hljs-string">&quot;rkisp_rawrd2_s&quot;</span>:0-&gt;<span class="hljs-string">&quot;rkisp-isp-subdev&quot;</span>:0[1]&amp;apos;  //将media3和rawrd2连接<br></code></pre></td></tr></table></figure><h2 id="ddr"><a href="#ddr" class="headerlink" title="ddr"></a>ddr</h2><h3 id="设置-ddr-频率"><a href="#设置-ddr-频率" class="headerlink" title="设置 ddr 频率"></a>设置 ddr 频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cat</span> /sys/class/devfreq/dmc/available_frequencies<br><span class="hljs-built_in">echo</span> userspace &gt; /sys/class/devfreq/dmc/governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$freq</span> &gt; /sys/class/devfreq/dmc/userspace/set_freq<br></code></pre></td></tr></table></figure><h2 id="cpu"><a href="#cpu" class="headerlink" title="cpu"></a>cpu</h2><h2 id="配置-cpu-频率"><a href="#配置-cpu-频率" class="headerlink" title="配置 cpu 频率"></a>配置 cpu 频率</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> userspace &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>  &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="介绍-rk-平台常用调式手段"><a href="#介绍-rk-平台常用调式手段" class="headerlink" title="介绍 rk 平台常用调式手段"></a>介绍 rk 平台常用调式手段</h1><h2 id="venc"><a href="#venc" class="headerlink" title="venc"></a>venc</h2><h3 id="查看编码器频率"><a href="#查看编码器频率" class="headerlink" title="查看编码器频率"></a>查看编码器频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cat</span>  /sys/kernel/debug/clk/clk_rkvenc0_core/clk_rate<br><span class="hljs-built_in">cat</span>  /sys/kernel/debug/clk/clk_rkvenc1_core/clk_rate<br></code></pre></td></tr></table></figure><h2 id="isp"><a href="#isp" class="headerlink" title="isp"></a>isp</h2><h3 id="直通模式和半直通模式"><a href="#直通模式和半直通模式" class="headerlink" title="直通模式和半直通模式"></a>直通模式和半直通模式</h3><p><img src="/img/rockchip/isp_readback.png" alt="官方解释"></p><p>aiq 配置回读模式</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">export</span> normal_no_read_back=0<br></code></pre></td></tr></table></figure><p>media 拓扑断开isp和cif链接</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">media-ctl -d /dev/media1 -l  &amp;apos;<span class="hljs-string">&quot;rkcif-mipi-lvds&quot;</span>:0-&gt;<span class="hljs-string">&quot;rkisp-isp-subdev&quot;</span>:0[0]&amp;apos;  //将rkcif-mipi-lvds4和lvds4断开<br>media-ctl -d /dev/media1 -l  &amp;apos;<span class="hljs-string">&quot;rkisp_rawrd2_s&quot;</span>:0-&gt;<span class="hljs-string">&quot;rkisp-isp-subdev&quot;</span>:0[1]&amp;apos;  //将media3和rawrd2连接<br></code></pre></td></tr></table></figure><h2 id="ddr"><a href="#ddr" class="headerlink" title="ddr"></a>ddr</h2><h3 id="设置-ddr-频率"><a href="#设置-ddr-频率" class="headerlink" title="设置 ddr 频率"></a>设置 ddr 频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cat</span> /sys/class/devfreq/dmc/available_frequencies<br><span class="hljs-built_in">echo</span> userspace &gt; /sys/class/devfreq/dmc/governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$freq</span> &gt; /sys/class/devfreq/dmc/userspace/set_freq<br></code></pre></td></tr></table></figure><h2 id="cpu"><a href="#cpu" class="headerlink" title="cpu"></a>cpu</h2><h3 id="配置-cpu-频率"><a href="#配置-cpu-频率" class="headerlink" title="配置 cpu 频率"></a>配置 cpu 频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> userspace &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>  &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed<br></code></pre></td></tr></table></figure>]]></content>
     
     
     

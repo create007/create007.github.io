@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/rockchip/isp_readback.png">
 <meta property="article:published_time" content="2025-05-07T15:10:34.000Z">
-<meta property="article:modified_time" content="2025-05-07T15:29:23.098Z">
+<meta property="article:modified_time" content="2025-05-07T15:29:58.611Z">
 <meta property="article:author" content="不会碎觉的猫">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/rockchip/isp_readback.png">
@@ -307,7 +307,7 @@
 
 <h2 id="ddr"><a href="#ddr" class="headerlink" title="ddr"></a>ddr</h2><h3 id="设置-ddr-频率"><a href="#设置-ddr-频率" class="headerlink" title="设置 ddr 频率"></a>设置 ddr 频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cat</span> /sys/class/devfreq/dmc/available_frequencies<br><span class="hljs-built_in">echo</span> userspace &gt; /sys/class/devfreq/dmc/governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$freq</span> &gt; /sys/class/devfreq/dmc/userspace/set_freq<br></code></pre></td></tr></table></figure>
 
-<h2 id="cpu"><a href="#cpu" class="headerlink" title="cpu"></a>cpu</h2><h2 id="配置-cpu-频率"><a href="#配置-cpu-频率" class="headerlink" title="配置 cpu 频率"></a>配置 cpu 频率</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> userspace &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>  &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed<br></code></pre></td></tr></table></figure>
+<h2 id="cpu"><a href="#cpu" class="headerlink" title="cpu"></a>cpu</h2><h3 id="配置-cpu-频率"><a href="#配置-cpu-频率" class="headerlink" title="配置 cpu 频率"></a>配置 cpu 频率</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> userspace &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor<br><span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>  &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -325,6 +325,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2025/05/18/operate-system/" title="operate_system">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">operate_system</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
