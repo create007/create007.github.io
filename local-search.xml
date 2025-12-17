@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>编译链接问题</title>
+    <link href="/2025/09/21/%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E9%97%AE%E9%A2%98/"/>
+    <url>/2025/09/21/%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="编译链接问题"><a href="#编译链接问题" class="headerlink" title="编译链接问题"></a>编译链接问题</h1><h2 id="运行时找不到对应库"><a href="#运行时找不到对应库" class="headerlink" title="运行时找不到对应库"></a>运行时找不到对应库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">Error loading shared library libmedia_mpp.so: No such file or directory (needed by ./sample_uvc2vdenc2vo)<br>Error loading shared library libmpp_component.so: No such file or directory (needed by ./sample_uvc2vdenc2vo)<br></code></pre></td></tr></table></figure><p>解决方法：</p><ol><li>确定库存不存在</li></ol><p><code>find / -name &quot;libmedia_mpp.so&quot; 2&gt;/dev/null —— 文件到底在不在？</code></p><ol start="2"><li>确定路径有没有指定对</li></ol><p><code>echo $LD_LIBRARY_PATH </code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=/usr/local/lib:<span class="hljs-variable">$LD_LIBRARY_PATH</span><br></code></pre></td></tr></table></figure><ol start="3"><li>file 确定架构一致性</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>编译 gcc</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MXIC和XTX存储介质区别</title>
     <link href="/2025/09/21/MXIC%E5%92%8CXTX%E5%AD%98%E5%82%A8%E4%BB%8B%E8%B4%A8%E5%8C%BA%E5%88%AB/"/>
     <url>/2025/09/21/MXIC%E5%92%8CXTX%E5%AD%98%E5%82%A8%E4%BB%8B%E8%B4%A8%E5%8C%BA%E5%88%AB/</url>
