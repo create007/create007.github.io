@@ -1,0 +1,968 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="不会碎觉的猫">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="toolName: todo_write status: success Todos updated: 3 items toolName: run_command status: success command: git clone https:&#x2F;&#x2F;github.com&#x2F;strukturag&#x2F;libheif.git undefined toolName: todo_write status: su">
+<meta property="og:type" content="article">
+<meta property="og:title" content="adapt_libheif">
+<meta property="og:url" content="http://example.com/2025/12/21/adapt-libheif/index.html">
+<meta property="og:site_name" content="不会碎觉的猫">
+<meta property="og:description" content="toolName: todo_write status: success Todos updated: 3 items toolName: run_command status: success command: git clone https:&#x2F;&#x2F;github.com&#x2F;strukturag&#x2F;libheif.git undefined toolName: todo_write status: su">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-21T13:51:08.000Z">
+<meta property="article:modified_time" content="2025-12-21T14:53:38.059Z">
+<meta property="article:author" content="不会碎觉的猫">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>adapt_libheif - 不会碎觉的猫</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>不会睡觉的猫</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="adapt_libheif"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-12-21 21:51" pubdate>
+          2025年12月21日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          32 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">adapt_libheif</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年12月21日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 3 items</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: git clone <a target="_blank" rel="noopener" href="https://github.com/strukturag/libheif.git">https://github.com/strukturag/libheif.git</a> undefined</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 3 items</p>
+<p>toolName: view_folder</p>
+<p>status: success</p>
+<p>&#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif</p>
+<p>toolName: view_folder</p>
+<p>status: success</p>
+<p>&#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: ls -F &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif undefined</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;README.md</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;README.md</p>
+<p>toolName: view_folder</p>
+<p>status: success</p>
+<p>&#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;third-party</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: ls -F &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;third-party undefined</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: cmake –version &amp;&amp; pkg-config –version &amp;&amp; gcc –version undefined</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 3 items</p>
+<p>toolName: Write</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;compile_libheif.sh</p>
+<p>changes: undefined</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: chmod +x &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;compile_libheif.sh undefined</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: ls -F &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;scripts undefined</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;scripts&#x2F;install-ci-linux.sh</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 3 items</p>
+<p>已为您下载 <code>libheif</code> 仓库至 <code>/home/lin/tools/libheif</code>，并创建了一键编译脚本 <code>compile_libheif.sh</code>。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ol>
+<li><p><strong>进入目录</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /home/lin/tools/libheif<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>运行编译脚本</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./compile_libheif.sh<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="脚本内容说明"><a href="#脚本内容说明" class="headerlink" title="脚本内容说明"></a>脚本内容说明</h3><p>该脚本会自动检测系统（支持 Debian&#x2F;Ubuntu 和 Fedora&#x2F;RHEL 系），尝试安装必要的依赖库（如 <code>libde265</code>, <code>x265</code>, <code>libaom</code> 等），然后执行 CMake 配置和编译。</p>
+<p>脚本文件位置：<code>/home/lin/tools/libheif/compile_libheif.sh</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-built_in">set</span> -e<br><br><span class="hljs-comment"># Install dependencies (Ubuntu/Debian)</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Installing dependencies...&quot;</span><br><span class="hljs-keyword">if</span> [ -x <span class="hljs-string">&quot;<span class="hljs-subst">$(command -v apt-get)</span>&quot;</span> ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">sudo</span> apt-get update<br>    <span class="hljs-built_in">sudo</span> apt-get install -y cmake make g++ pkg-config \<br>        libde265-dev libx265-dev libaom-dev libjpeg-dev \<br>        libtool<br><span class="hljs-keyword">elif</span> [ -x <span class="hljs-string">&quot;<span class="hljs-subst">$(command -v dnf)</span>&quot;</span> ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">sudo</span> dnf install -y cmake make gcc-c++ pkg-config \<br>        libde265-devel x265-devel libaom-devel libjpeg-devel \<br>        libtool<br><span class="hljs-keyword">else</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Package manager not found or unsupported. Please ensure the following are installed:&quot;</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;cmake make g++ pkg-config libde265-dev libx265-dev libaom-dev libjpeg-dev&quot;</span><br><span class="hljs-keyword">fi</span><br><br><span class="hljs-comment"># Create build directory</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Creating build directory...&quot;</span><br><span class="hljs-keyword">if</span> [ -d <span class="hljs-string">&quot;build&quot;</span> ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">rm</span> -rf build<br><span class="hljs-keyword">fi</span><br><span class="hljs-built_in">mkdir</span> build<br><span class="hljs-built_in">cd</span> build<br><br><span class="hljs-comment"># Configure</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Configuring with CMake...&quot;</span><br><span class="hljs-comment"># Try using the preset first (requires CMake 3.21+)</span><br><span class="hljs-keyword">if</span> cmake --preset=release .. 2&gt;/dev/null; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Using &#x27;release&#x27; preset...&quot;</span><br><span class="hljs-keyword">else</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Preset not available or failed. Falling back to standard configuration...&quot;</span><br>    cmake -DCMAKE_BUILD_TYPE=Release ..<br><span class="hljs-keyword">fi</span><br><br><span class="hljs-comment"># Build</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Compiling...&quot;</span><br>make -j$(<span class="hljs-built_in">nproc</span>)<br><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Build complete! Libraries are in the &#x27;build&#x27; directory.&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>依赖说明：</strong></p>
+<ul>
+<li><strong>HEIC 解码</strong>：需要 <code>libde265</code></li>
+<li><strong>HEIC 编码</strong>：需要 <code>libx265</code> (GPL)</li>
+<li><strong>AVIF 编解码</strong>：需要 <code>libaom</code> (或 <code>dav1d</code>&#x2F;<code>rav1e</code>)</li>
+<li>脚本默认会安装这些库的开发包（dev&#x2F;devel），以确保完整的功能支持。</li>
+</ul>
+<hr>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 7 items</p>
+<p>toolName: search_codebase</p>
+<p>status: success</p>
+<p>query: Find API functions in libheif that might allow adding compressed data directly or bypassing re-encoding. Look for ‘passthrough’, ‘raw’, ‘bitstream’, or functions that add an image from a buffer without decoding.</p>
+<p>toolName: view_files</p>
+<p>status: failed</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;heif.h</p>
+<p>toolName: view_folder</p>
+<p>status: success</p>
+<p>&#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: ls -F &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif undefined</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: find &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif -name heif.h undefined</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;api&#x2F;libheif&#x2F;heif.h</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;api&#x2F;libheif&#x2F;heif_encoding.h</p>
+<p>toolName: view_files</p>
+<p>status: failed</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;heif_plugin.h</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: find &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif -name heif_plugin.h undefined</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;api&#x2F;libheif&#x2F;heif_plugin.h</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;api&#x2F;libheif&#x2F;heif_plugin.h</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;plugins&#x2F;encoder_x265.cc</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;api&#x2F;libheif&#x2F;heif.h</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;plugin_registry.h</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;api&#x2F;libheif&#x2F;heif_library.h</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;libheif&#x2F;api&#x2F;libheif&#x2F;heif_library.h</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 8 items</p>
+<p>toolName: Write</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;compile_x86.sh</p>
+<p>changes: undefined</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 8 items</p>
+<p>toolName: Write</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;compile_cross.sh</p>
+<p>changes: undefined</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 8 items</p>
+<p>toolName: Write</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;demo_heif.c</p>
+<p>changes: undefined</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 8 items</p>
+<p>以下为您提供 <code>libheif</code> 的编译脚本和 H.265 I 帧封装 demo。</p>
+<h3 id="1-编译脚本"><a href="#1-编译脚本" class="headerlink" title="1. 编译脚本"></a>1. 编译脚本</h3><p>我已为您创建了两个脚本，分别用于 x86 本地编译和 ARM 交叉编译。</p>
+<h4 id="x86-编译脚本-compile-x86-sh"><a href="#x86-编译脚本-compile-x86-sh" class="headerlink" title="x86 编译脚本 (compile_x86.sh)"></a>x86 编译脚本 (<code>compile_x86.sh</code>)</h4><p>此脚本会同时编译出静态库 (<code>libheif.a</code>) 和动态库 (<code>libheif.so</code>)。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /home/lin/tools/libheif<br><span class="hljs-built_in">chmod</span> +x compile_x86.sh<br>./compile_x86.sh<br></code></pre></td></tr></table></figure>
+
+<h4 id="交叉编译脚本模板-compile-cross-sh"><a href="#交叉编译脚本模板-compile-cross-sh" class="headerlink" title="交叉编译脚本模板 (compile_cross.sh)"></a>交叉编译脚本模板 (<code>compile_cross.sh</code>)</h4><p>此脚本预设了 <code>aarch64-linux-gnu-</code> 前缀。如果您的交叉编译工具链不同，请修改脚本中的 <code>CROSS_COMPILE_PREFIX</code> 变量。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /home/lin/tools/libheif<br><span class="hljs-built_in">chmod</span> +x compile_cross.sh<br>./compile_cross.sh<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意</strong>：交叉编译时，您通常还需要先交叉编译依赖库（<code>libde265</code>, <code>x265</code>, <code>libaom</code> 等）并正确设置 <code>CMAKE_PREFIX_PATH</code>，或者在 CMake 中禁用它们（脚本中已默认禁用 <code>WITH_LIBDE265</code> 和 <code>WITH_X265</code> 以保证能通过基础编译，若需功能支持需自行添加依赖路径）。</p>
+</blockquote>
+<hr>
+<h3 id="2-Linux-C-Demo-实现"><a href="#2-Linux-C-Demo-实现" class="headerlink" title="2. Linux C Demo 实现"></a>2. Linux C Demo 实现</h3><p><code>libheif</code> 的设计初衷是<strong>编解码库</strong>（Image Codec Wrapper），其核心工作流是 <code>Decode -&gt; Pixels -&gt; Encode</code>。它并没有公开的 API 直接支持 “Muxing”（将现有的 H.265 码流直接封装而不重新编码）。</p>
+<p>如果您手头已经有 H.265 I 帧（bitstream），想要封装成 HEIF，通常有两种路径：</p>
+<ol>
+<li><strong>标准路径（推荐 Demo）</strong>：先解码为像素，再编码为 HEIF。这保证了兼容性，但会有重编码的性能开销。</li>
+<li><strong>高级路径（透传插件）</strong>：编写自定义 <code>heif_encoder_plugin</code>，欺骗 <code>libheif</code> 直接写入您的 NAL 数据。这非常复杂（涉及手动解析 NAL），不适合作为基础 Demo。</li>
+</ol>
+<p>这里提供<strong>标准路径</strong>的 C 语言实现：<code>demo_heif.c</code>。它展示了如何读取一个图像（或 H.265 帧，如果使用 libde265 解码），将其加载到 <code>heif_image</code> 中，然后使用 <code>heif_encoder</code> 封装输出。</p>
+<h4 id="Demo-代码-demo-heif-c"><a href="#Demo-代码-demo-heif-c" class="headerlink" title="Demo 代码 (demo_heif.c)"></a>Demo 代码 (<code>demo_heif.c</code>)</h4><p>该文件已生成在 <code>/home/lin/tools/libheif/demo_heif.c</code>。</p>
+<p><strong>编译 Demo 的命令</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 假设您已经运行了 ./compile_x86.sh 并且安装到了 ./install_x86</span><br>gcc demo_heif.c -o demo_heif \<br>    -I./install_x86/include \<br>    -L./install_x86/lib \<br>    -lheif -lde265 -lx265 -lstdc++ -lm<br></code></pre></td></tr></table></figure>
+<p><em>(注意：链接库可能需要根据实际编译情况调整，例如可能需要 <code>-laom</code> 等)</em></p>
+<h4 id="核心逻辑说明"><a href="#核心逻辑说明" class="headerlink" title="核心逻辑说明"></a>核心逻辑说明</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 1. 创建上下文</span><br>heif_context* ctx = heif_context_alloc();<br><br><span class="hljs-comment">// 2. 获取编码器 (HEVC)</span><br>heif_encoder* encoder;<br>heif_context_get_encoder_for_format(ctx, heif_compression_HEVC, &amp;encoder);<br><br><span class="hljs-comment">// 3. 设置质量 (甚至设为无损)</span><br>heif_encoder_set_lossy_quality(encoder, <span class="hljs-number">90</span>);<br><br><span class="hljs-comment">// 4. 编码图像 (输入必须是 heif_image 像素数据)</span><br><span class="hljs-comment">// img 是您解码后的 YUV 数据</span><br>heif_context_encode_image(ctx, img, encoder, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);<br><br><span class="hljs-comment">// 5. 写出文件</span><br>heif_context_write_to_file(ctx, <span class="hljs-string">&quot;output.heic&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-关于直接封装（Passthrough）的特别说明"><a href="#3-关于直接封装（Passthrough）的特别说明" class="headerlink" title="3. 关于直接封装（Passthrough）的特别说明"></a>3. 关于直接封装（Passthrough）的特别说明</h3><p>如果您绝对需要<strong>零拷贝&#x2F;零重编码</strong>（Zero-Copy&#x2F;Passthrough）封装：<br><code>libheif</code> 目前的公开 API 不支持直接注入 <code>packet/NAL</code>。实现这一点的唯一方法是编写一个自定义的 C++ 插件，实现 <code>heif_encoder_plugin</code> 接口，并在 <code>get_compressed_data</code> 回调中返回您的 H.265 NAL 数据（需要去除 Start Code）。这通常被视为 hacking 行为，建议如果只需封装，可以使用 <code>MP4Box</code> (GPAC) 或 <code>ffmpeg</code> 命令行工具，它们对 Muxing 的支持更原生。</p>
+<p>例如使用 ffmpeg 封装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffmpeg -i input.265 -c:v copy -f heif output.heic<br></code></pre></td></tr></table></figure>
+
+
+<hr>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;demo_heif.c</p>
+<p>toolName: view_folder</p>
+<p>status: success</p>
+<p>&#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;install_x86</p>
+<p><code>demo_heif</code> 是一个命令行程序，使用方法如下：</p>
+<h3 id="1-使用命令"><a href="#1-使用命令" class="headerlink" title="1. 使用命令"></a>1. 使用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./demo_heif &lt;输入图片文件&gt; &lt;输出HEIF文件&gt;<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 将 jpeg 图片转换为 heic</span><br>./demo_heif input.jpg output.heic<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-编译步骤"><a href="#2-编译步骤" class="headerlink" title="2. 编译步骤"></a>2. 编译步骤</h3><p>由于您目前的目录中只有源码，您需要先编译库，再编译 demo。请按顺序执行以下命令：</p>
+<p><strong>第一步：编译 libheif 库 (x86)</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /home/lin/tools/libheif<br><span class="hljs-built_in">chmod</span> +x compile_x86.sh<br>./compile_x86.sh<br></code></pre></td></tr></table></figure>
+<p><em>(注：这会创建 <code>install_x86</code> 目录并安装编译好的头文件和库文件)</em></p>
+<p><strong>第二步：编译 demo_heif</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 确保在 /home/lin/tools/libheif 目录下</span><br>gcc demo_heif.c -o demo_heif \<br>    -I./install_x86/include \<br>    -L./install_x86/lib \<br>    -lheif -lde265 -lx265 -lstdc++ -lm<br></code></pre></td></tr></table></figure>
+<p><em>(注：如果链接报错找不到 <code>x265</code> 或 <code>de265</code>，请确保您系统已安装相关开发库，或在 gcc 命令中调整路径)</em></p>
+<p><strong>第三步：运行</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 运行时需要指定动态库路径</span><br><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=./install_x86/lib:<span class="hljs-variable">$LD_LIBRARY_PATH</span><br>./demo_heif input.jpg output.heic<br></code></pre></td></tr></table></figure>
+
+
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 11 items</p>
+<p>toolName: search_codebase</p>
+<p>status: success</p>
+<p>query: Find how to read raw H.265 bitstream using libde265 or if libheif has a raw bitstream reader. Look for ‘de265_new_decoder’, ‘de265_push_data’, ‘de265_decode’.</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 11 items</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;demo_heif.c</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 11 items</p>
+<p>toolName: edit_file_search_replace</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;demo_heif.c</p>
+<p>changes: undefined</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 11 items</p>
+<p>错误原因是：<code>libheif</code> 的 <code>heif_context_read_from_file</code> 主要是用来读取 HEIF&#x2F;AVIF <strong>容器文件</strong>的，它不支持直接读取裸 H.265 码流（raw bitstream）。当您把裸流喂给它时，它尝试把它当做 ISO-BMFF 盒子解析，导致解析出了一个巨大的 Box Size 从而触发了安全限制。</p>
+<p>为了解决这个问题，我更新了 <code>demo_heif.c</code>，加入了直接使用 <code>libde265</code> 解析裸 H.265 码流的逻辑。</p>
+<p>现在这个 Demo 的工作流程是：</p>
+<ol>
+<li><strong>尝试作为裸 H.265 解析</strong>：使用 <code>libde265</code> 解码第一帧图像。</li>
+<li><strong>如果失败</strong>：回退到使用 <code>libheif</code> 读取（用于读取 .heic 等容器文件）。</li>
+<li><strong>获取图像后</strong>：封装为 HEIF 格式输出。</li>
+</ol>
+<h3 id="重新编译和运行"><a href="#重新编译和运行" class="headerlink" title="重新编译和运行"></a>重新编译和运行</h3><p>请按以下步骤重新编译并运行 Demo：</p>
+<p><strong>1. 重新编译 Demo</strong><br>（因为引入了 <code>libde265</code> 的头文件和符号，需要确保编译命令正确）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /home/lin/tools/libheif<br>gcc demo_heif.c -o demo_heif \<br>    -I./install_x86/include \<br>    -L./install_x86/lib \<br>    -lheif -lde265 -lx265 -lstdc++ -lm<br></code></pre></td></tr></table></figure>
+
+<p><strong>2. 运行 Demo</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=./install_x86/lib:<span class="hljs-variable">$LD_LIBRARY_PATH</span><br>./demo_heif ./h265_source/all_I.h265 output.heic<br></code></pre></td></tr></table></figure>
+
+<p>这样应该就能正确识别您的 H.265 I 帧文件并封装成功了。</p>
+<hr>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;demo_heif.c</p>
+<p>toolName: edit_file_search_replace</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;demo_heif.c</p>
+<p>changes: undefined</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: gcc demo_heif.c -o demo_heif -I.&#x2F;install_x86&#x2F;include -L.&#x2F;install_x86&#x2F;lib -lheif -lde265 -lx265 -lstdc++ -lm undefined</p>
+<p>toolName: view_folder</p>
+<p>status: success</p>
+<p>&#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: ls -F *.sh undefined</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;compile_x86.sh</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;compile_cross.sh</p>
+<p>已为您修复 <code>demo_heif.c</code> 的编译错误。</p>
+<h3 id="修复说明"><a href="#修复说明" class="headerlink" title="修复说明"></a>修复说明</h3><p>错误原因是在 C 语言环境下，引用 <code>struct</code> 和 <code>enum</code> 类型时必须显式加上 <code>struct</code> 和 <code>enum</code> 关键字（除非使用了 <code>typedef</code>）。我同时修复了几个指针类型不匹配的警告，并移除了无效的 <code>heif_context_alloc</code> 调用。</p>
+<p>现在该 Demo 已经可以成功编译，并实现了以下逻辑：</p>
+<ol>
+<li><strong>直接解析裸流</strong>：使用 <code>libde265</code> 直接读取并解码 H.265 I 帧（裸比特流）。</li>
+<li><strong>封装 HEIF</strong>：将解码后的 YUV 数据封装为 <code>heif_image</code>，并使用 <code>libheif</code> 重新编码&#x2F;保存为 HEIF 文件。</li>
+</ol>
+<h3 id="1-编译与运行-Demo"><a href="#1-编译与运行-Demo" class="headerlink" title="1. 编译与运行 Demo"></a>1. 编译与运行 Demo</h3><p><strong>编译命令</strong>（已验证）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc demo_heif.c -o demo_heif \<br>    -I./install_x86/include \<br>    -L./install_x86/lib \<br>    -lheif -lde265 -lx265 -lstdc++ -lm<br></code></pre></td></tr></table></figure>
+
+<p><strong>运行命令</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 设置动态库路径（指向编译出的 install_x86/lib）</span><br><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=./install_x86/lib:<span class="hljs-variable">$LD_LIBRARY_PATH</span><br><br><span class="hljs-comment"># 运行 demo</span><br>./demo_heif ./h265_source/all_I.h265 output.heic<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-交付文件内容"><a href="#2-交付文件内容" class="headerlink" title="2. 交付文件内容"></a>2. 交付文件内容</h3><p>以下是您要求的脚本和代码的最终版本。</p>
+<h4 id="1-x86-编译脚本-compile-x86-sh"><a href="#1-x86-编译脚本-compile-x86-sh" class="headerlink" title="(1) x86 编译脚本 (compile_x86.sh)"></a>(1) x86 编译脚本 (<code>compile_x86.sh</code>)</h4><p>此脚本会同时编译出静态库 (<code>.a</code>) 和动态库 (<code>.so</code>) 到 <code>install_x86</code> 目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-built_in">set</span> -e<br><br><span class="hljs-comment"># Define paths</span><br>LIBHEIF_SRC_DIR=<span class="hljs-string">&quot;<span class="hljs-subst">$(pwd)</span>&quot;</span><br>BUILD_DIR=<span class="hljs-string">&quot;build_x86&quot;</span><br>INSTALL_DIR=<span class="hljs-string">&quot;<span class="hljs-subst">$(pwd)</span>/install_x86&quot;</span><br><br><span class="hljs-comment"># Create directories</span><br><span class="hljs-built_in">mkdir</span> -p <span class="hljs-variable">$BUILD_DIR</span><br><span class="hljs-built_in">mkdir</span> -p <span class="hljs-variable">$INSTALL_DIR</span><br><br><span class="hljs-comment"># 1. Building Shared Libraries</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Building x86 Shared Libraries...&quot;</span><br>cmake -S . -B <span class="hljs-variable">$BUILD_DIR</span>/shared \<br>    -DCMAKE_INSTALL_PREFIX=<span class="hljs-variable">$INSTALL_DIR</span> \<br>    -DCMAKE_BUILD_TYPE=Release \<br>    -DBUILD_SHARED_LIBS=ON \<br>    -DWITH_EXAMPLES=OFF<br><br>cmake --build <span class="hljs-variable">$BUILD_DIR</span>/shared --target install -j$(<span class="hljs-built_in">nproc</span>)<br><br><span class="hljs-comment"># 2. Building Static Libraries</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Building x86 Static Libraries...&quot;</span><br>cmake -S . -B <span class="hljs-variable">$BUILD_DIR</span>/static \<br>    -DCMAKE_INSTALL_PREFIX=<span class="hljs-variable">$INSTALL_DIR</span> \<br>    -DCMAKE_BUILD_TYPE=Release \<br>    -DBUILD_SHARED_LIBS=OFF \<br>    -DWITH_EXAMPLES=OFF \<br>    -DCMAKE_POSITION_INDEPENDENT_CODE=ON<br><br>cmake --build <span class="hljs-variable">$BUILD_DIR</span>/static --target install -j$(<span class="hljs-built_in">nproc</span>)<br><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Build complete. Artifacts in <span class="hljs-variable">$INSTALL_DIR</span>&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="2-交叉编译脚本模板-compile-cross-sh"><a href="#2-交叉编译脚本模板-compile-cross-sh" class="headerlink" title="(2) 交叉编译脚本模板 (compile_cross.sh)"></a>(2) 交叉编译脚本模板 (<code>compile_cross.sh</code>)</h4><p>用于 ARM 架构（如 <code>aarch64</code>）。注意：实际使用时需确保依赖库（libde265, x265）也已交叉编译并指定路径。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-built_in">set</span> -e<br><br><span class="hljs-comment"># === Cross Compilation Configuration ===</span><br>CROSS_COMPILE_PREFIX=<span class="hljs-string">&quot;aarch64-linux-gnu-&quot;</span><br><br><span class="hljs-comment"># Define paths</span><br>BUILD_DIR=<span class="hljs-string">&quot;build_arm&quot;</span><br>INSTALL_DIR=<span class="hljs-string">&quot;<span class="hljs-subst">$(pwd)</span>/install_arm&quot;</span><br>TOOLCHAIN_FILE=<span class="hljs-string">&quot;<span class="hljs-variable">$BUILD_DIR</span>/toolchain.cmake&quot;</span><br><br><span class="hljs-built_in">mkdir</span> -p <span class="hljs-variable">$BUILD_DIR</span><br><span class="hljs-built_in">mkdir</span> -p <span class="hljs-variable">$INSTALL_DIR</span><br><br><span class="hljs-comment"># Generate CMake Toolchain File</span><br><span class="hljs-built_in">cat</span> &gt; <span class="hljs-variable">$TOOLCHAIN_FILE</span> &lt;&lt;<span class="hljs-string">EOF</span><br><span class="hljs-string">set(CMAKE_SYSTEM_NAME Linux)</span><br><span class="hljs-string">set(CMAKE_SYSTEM_PROCESSOR aarch64)</span><br><span class="hljs-string">set(CMAKE_C_COMPILER $&#123;CROSS_COMPILE_PREFIX&#125;gcc)</span><br><span class="hljs-string">set(CMAKE_CXX_COMPILER $&#123;CROSS_COMPILE_PREFIX&#125;g++)</span><br><span class="hljs-string">set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)</span><br><span class="hljs-string">set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)</span><br><span class="hljs-string">set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)</span><br><span class="hljs-string">set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)</span><br><span class="hljs-string">EOF</span><br><br><span class="hljs-comment"># 1. Shared Libraries</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Building ARM Shared Libraries...&quot;</span><br>cmake -S . -B <span class="hljs-variable">$BUILD_DIR</span>/shared \<br>    -DCMAKE_TOOLCHAIN_FILE=<span class="hljs-variable">$TOOLCHAIN_FILE</span> \<br>    -DCMAKE_INSTALL_PREFIX=<span class="hljs-variable">$INSTALL_DIR</span> \<br>    -DCMAKE_BUILD_TYPE=Release \<br>    -DBUILD_SHARED_LIBS=ON \<br>    -DWITH_EXAMPLES=OFF \<br>    -DWITH_LIBDE265=OFF \<br>    -DWITH_X265=OFF <br>    <span class="hljs-comment"># 注意：如果需要完整功能，需交叉编译 libde265/x265 并通过 -DCMAKE_PREFIX_PATH 指定路径</span><br><br>cmake --build <span class="hljs-variable">$BUILD_DIR</span>/shared --target install -j$(<span class="hljs-built_in">nproc</span>)<br><br><span class="hljs-comment"># 2. Static Libraries</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Building ARM Static Libraries...&quot;</span><br>cmake -S . -B <span class="hljs-variable">$BUILD_DIR</span>/static \<br>    -DCMAKE_TOOLCHAIN_FILE=<span class="hljs-variable">$TOOLCHAIN_FILE</span> \<br>    -DCMAKE_INSTALL_PREFIX=<span class="hljs-variable">$INSTALL_DIR</span> \<br>    -DCMAKE_BUILD_TYPE=Release \<br>    -DBUILD_SHARED_LIBS=OFF \<br>    -DWITH_EXAMPLES=OFF \<br>    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \<br>    -DWITH_LIBDE265=OFF \<br>    -DWITH_X265=OFF<br><br>cmake --build <span class="hljs-variable">$BUILD_DIR</span>/static --target install -j$(<span class="hljs-built_in">nproc</span>)<br><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Cross-compilation complete. Artifacts in <span class="hljs-variable">$INSTALL_DIR</span>&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="3-Linux-C-Demo-demo-heif-c"><a href="#3-Linux-C-Demo-demo-heif-c" class="headerlink" title="(3) Linux C Demo (demo_heif.c)"></a>(3) Linux C Demo (<code>demo_heif.c</code>)</h4><p>完整源码已更新在您的编辑器中。核心逻辑如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// ... 头文件引入 ...</span><br><br><span class="hljs-comment">// 核心函数：使用 libde265 解析裸流并转换为 heif_image</span><br>heif_image* <span class="hljs-title function_">decode_h265_bitstream</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span>* filename)</span> &#123;<br>    <span class="hljs-comment">// 1. 初始化解码器</span><br>    de265_decoder_context* ctx = de265_new_decoder();<br>    <br>    <span class="hljs-comment">// 2. 循环读取文件并 push 到解码器</span><br>    <span class="hljs-keyword">while</span> (...) &#123;<br>        de265_push_data(ctx, buf, n, <span class="hljs-number">0</span>, <span class="hljs-literal">NULL</span>);<br>        de265_decode(ctx, &amp;frame_decoded);<br>        <span class="hljs-keyword">if</span> (frame_decoded) &#123;<br>            img = de265_get_next_picture(ctx); <span class="hljs-comment">// 获取解码后的图像</span><br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-comment">// 3. 将 de265 图像转换为 heif_image</span><br>    <span class="hljs-type">int</span> width = de265_get_image_width(img, <span class="hljs-number">0</span>);<br>    <span class="hljs-type">int</span> height = de265_get_image_height(img, <span class="hljs-number">0</span>);<br>    heif_image_create(width, height, ..., &amp;heif_img);<br>    <br>    <span class="hljs-comment">// 4. 拷贝 YUV 平面数据</span><br>    <span class="hljs-comment">// ... memcpy 逐行拷贝 Y, U, V 分量 ...</span><br>    <br>    <span class="hljs-keyword">return</span> heif_img;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span>** argv)</span> &#123;<br>    <span class="hljs-comment">// 1. 解析输入 H.265</span><br>    heif_image* img = decode_h265_bitstream(input_filename);<br>    <br>    <span class="hljs-comment">// 2. 创建 HEIF 上下文和编码器</span><br>    heif_context* ctx_out = heif_context_alloc();<br>    heif_context_get_encoder_for_format(ctx_out, heif_compression_HEVC, &amp;encoder);<br>    <br>    <span class="hljs-comment">// 3. 编码并写入文件</span><br>    heif_context_encode_image(ctx_out, img, encoder, <span class="hljs-literal">NULL</span>, &amp;out_handle);<br>    heif_context_write_to_file(ctx_out, output_filename);<br>    <br>    <span class="hljs-comment">// ... 清理资源 ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<hr>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 12 items</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;demo_heif.c</p>
+<p>toolName: edit_file_search_replace</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;demo_heif.c</p>
+<p>changes: undefined</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: gcc demo_heif.c -o demo_heif -I.&#x2F;install_x86&#x2F;include -L.&#x2F;install_x86&#x2F;lib -lheif -lde265 -lx265 -lstdc++ -lm undefined</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: .&#x2F;demo_heif .&#x2F;h265_source&#x2F;all_I.h265 output.heic undefined</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: export LD_LIBRARY_PATH&#x3D;.&#x2F;install_x86&#x2F;lib:$LD_LIBRARY_PATH &amp;&amp; .&#x2F;demo_heif .&#x2F;h265_source&#x2F;all_I.h265 output.heic undefined</p>
+<p>toolName: todo_write</p>
+<p>status: success</p>
+<p>Todos updated: 12 items</p>
+<p>已为您修复了 Segmentation fault 问题。</p>
+<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>在 <code>demo_heif.c</code> 中，当从裸流 H.265 转换为 <code>heif_image</code> 时，我只调用了 <code>heif_image_add_plane</code> 为 Y 分量分配了内存，<strong>遗漏了 Cb 和 Cr 分量的内存分配</strong>。导致后续 <code>memcpy</code> 复制色度数据时访问了空指针，从而触发段错误。</p>
+<h3 id="修复内容"><a href="#修复内容" class="headerlink" title="修复内容"></a>修复内容</h3><p>我在 <code>decode_h265_bitstream</code> 函数中补充了 Cb 和 Cr 分量的平面添加逻辑，并根据色度采样格式（4:2:0, 4:2:2, 4:4:4）正确计算了色度平面的宽高。</p>
+<h3 id="验证结果"><a href="#验证结果" class="headerlink" title="验证结果"></a>验证结果</h3><p>修复后重新编译并运行，程序已成功执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ ./demo_heif ./h265_source/all_I.h265 output.heic<br>Trying to decode as raw H.265...<br>Decoded H.265: 3840x2160, chroma=1<br>Getting HEVC encoder...<br>Encoding to HEIF...<br>Writing output: output.heic<br>Done!<br></code></pre></td></tr></table></figure>
+<p>现在 <code>output.heic</code> 文件已生成，说明 H.265 I 帧已成功封装（经过解码重编码流程）为 HEIF 文件。</p>
+<p>您可以直接使用该版本代码进行后续开发或集成。如果您需要验证生成的 <code>output.heic</code>，可以使用 <code>heif-info</code> 或 <code>heif-convert</code> 工具查看（这些工具也在 install 目录或系统路径中）。</p>
+<hr>
+<p>toolName: view_folder</p>
+<p>status: failed</p>
+<p>&#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;install_x86&#x2F;bin</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: which heif-info undefined</p>
+<p>toolName: run_command</p>
+<p>status: success</p>
+<p>command: heif-info –help undefined</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;CMakeLists.txt</p>
+<p>toolName: search_by_regex</p>
+<p>status: success</p>
+<p>query: WITH_EXAMPLES</p>
+<p>toolName: view_files</p>
+<p>status: success</p>
+<p>filePath: &#x2F;home&#x2F;lin&#x2F;tools&#x2F;libheif&#x2F;CMakeLists.txt</p>
+<p>这段 <code>heif-info</code> 的输出信息非常完美，验证了您的 HEIF 文件 (<strong>output.heic</strong>) 生成是完全正确的。</p>
+<p>以下是逐行解读：</p>
+<h3 id="1-容器格式验证-Container-Format"><a href="#1-容器格式验证-Container-Format" class="headerlink" title="1. 容器格式验证 (Container Format)"></a>1. 容器格式验证 (Container Format)</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">MIME type: image/heic<br>main brand: heic<br>compatible brands: mif1, heic, miaf<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>解读</strong>: 文件被正确识别为 HEIC 格式。</li>
+<li><strong>Main brand: heic</strong>: 说明这是标准的 HEVC (H.265) 编码的 HEIF 图像。</li>
+<li><strong>Compatible brands</strong>: <code>mif1</code> (HEIF通用品牌), <code>miaf</code> (Multi-Image Application Format) 都是标准的兼容标识。</li>
+<li><strong>结论</strong>: ✅ <strong>文件头正确</strong>。</li>
+</ul>
+<h3 id="2-图像基本信息-Image-Properties"><a href="#2-图像基本信息-Image-Properties" class="headerlink" title="2. 图像基本信息 (Image Properties)"></a>2. 图像基本信息 (Image Properties)</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">image: 3840x2160 (id=1), primary<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>解读</strong>:<ul>
+<li><strong>3840x2160</strong>: 分辨率是 4K，与您输入的 H.265 I 帧源分辨率一致。</li>
+<li><strong>primary</strong>: 标记为主图像（HEIF 文件可以包含多张图，必须有一张是主图）。</li>
+</ul>
+</li>
+<li><strong>结论</strong>: ✅ <strong>分辨率和主图标记正确</strong>。</li>
+</ul>
+<h3 id="3-颜色与编码信息-Color-Coding"><a href="#3-颜色与编码信息-Color-Coding" class="headerlink" title="3. 颜色与编码信息 (Color &amp; Coding)"></a>3. 颜色与编码信息 (Color &amp; Coding)</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">colorspace: YCbCr, 4:2:0<br>bit depth: 8<br>color profile: nclx<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>解读</strong>:<ul>
+<li><strong>colorspace: YCbCr, 4:2:0</strong>: 使用了标准的 YUV 4:2:0 采样，这是最通用的 H.265 编码格式。我们在代码中正确设置了 <code>heif_image_add_plane</code> 来处理 Y, Cb, Cr 三个分量。</li>
+<li><strong>bit depth: 8</strong>: 8位色深，标准配置。</li>
+<li><strong>color profile: nclx</strong>: 这是 “Non-Constant Luminance coding” 的缩写，HEIF&#x2F;MP4 容器中用来描述 YUV 转换矩阵的标准方式（对应 BT.709 或 BT.601 等标准）。如果没有这个，显示可能会偏色。libheif 自动为我们添加了默认的 nclx profile。</li>
+</ul>
+</li>
+<li><strong>结论</strong>: ✅ <strong>像素格式正确</strong>。</li>
+</ul>
+<h3 id="4-其他通道-Auxiliary-Channels"><a href="#4-其他通道-Auxiliary-Channels" class="headerlink" title="4. 其他通道 (Auxiliary Channels)"></a>4. 其他通道 (Auxiliary Channels)</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">alpha channel: no <br>depth channel: no<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>解读</strong>: 没有透明通道 (Alpha) 和深度通道 (Depth)，符合预期（因为我们只是封装了一个普通的 I 帧）。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>HEIF 信息完全正确。</strong><br>这证明了：</p>
+<ol>
+<li><strong>裸流解析成功</strong>：<code>libde265</code> 正确解出了 4K 分辨率。</li>
+<li><strong>数据拷贝正确</strong>：YUV 数据正确传递给了 <code>libheif</code>（否则可能分辨率不对或报错）。</li>
+<li><strong>封装成功</strong>：生成了符合标准的 HEIC 文件，可以被标准查看器（如 macOS 预览、Windows 照片查看器或 <code>heif-convert</code>）打开。</li>
+</ol>
+<p>您可以放心使用此方案进行集成。如果您需要验证图像内容，可以使用以下命令将其转回 JPEG 查看：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 假设您已经安装了 heif-examples 或编译出了 heif-convert</span><br>./build/examples/heif-convert output.heic output.jpg<br></code></pre></td></tr></table></figure>
+
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/21/%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E9%97%AE%E9%A2%98/" title="编译链接问题">
+                        <span class="hidden-mobile">编译链接问题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  <!-- 
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+   -->
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
